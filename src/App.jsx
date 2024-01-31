@@ -1,9 +1,9 @@
 import React from 'react'
-import Grid from './components/Grid'
+import CardList from './components/CardList'
 
 const App = () => {
   return (
-
+    <CardList/>
   )
 }
 
