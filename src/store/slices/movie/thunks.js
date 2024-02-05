@@ -1,5 +1,6 @@
 import { movieApi } from "../../../api/movieApi";
-import { setMovies, startLoadingMovies } from "./movieSlice";
+import { setMovies} from "./movieSlice";
+
 
 const options = {
     method: 'GET',
@@ -10,18 +11,8 @@ const options = {
   };
 
 export const getMovies = ( page = 1) => {
-
     return async(dispatch, getState) => {
-        dispatch(startLoadingMovies());
-        const {data}= await movieApi.get(`/popular?language=en-US&page=${page}`,options);
+        const {data} = await movieApi.get(`/popular?language=es-ES&page=${page}`,options);
         dispatch(setMovies({movies: data.results, page: page + 1}));
     }
-
-
-
-
-}
-
-
-
- 
+  }
