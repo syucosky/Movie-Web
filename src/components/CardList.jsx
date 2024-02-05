@@ -69,6 +69,7 @@ const CardList = () => {
             <Card key={movie.id} movie={movie} />
           </Button>
         ))}
+        <Button onClick={() => dispatch(getMovies(page + 1))}>Cargar más</Button>
       </Grid>
       <div>
         <Modal
